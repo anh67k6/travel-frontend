@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Source Sans 3", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand-100: #ebedfc;
+  --color-brand-200: #c5cdf8;
+  --color-brand-400: #6f7de9;
+  --color-brand-500: #3f52e3;
+  --color-brand-600: #2e3a87;
+
+  --color-accent-100: #ffe9e5;
+  --color-accent-300: #ffc7bd;
+  --color-accent-500: #f75940;
+  --color-accent-600: #de503a;
+
+  --color-surface-50: #f8f9fb;
+  --color-surface-100: #f3f4f5;
+  --color-surface-200: #e9ecef;
+
+  --color-success-500: #17b978;
+  --color-error-500: #e23e57;
+}
+
+@layer base {
+  :root {
+    color: #212529;
+    background: #f8f9fb;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: #f8f9fb;
+    color: #212529;
+    font-family: var(--font-sans);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  a {
+    color: var(--color-brand-600);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  input,
+  select,
+  button {
+    font: inherit;
+  }
+}
+
+@layer components {
+  .app-shell {
+    @apply mx-auto grid w-full max-w-6xl gap-4 px-4 py-4 sm:px-6 sm:py-6;
+  }
+
+  .card {
+    @apply rounded-xl border border-surface-200 bg-white p-4 shadow-sm sm:p-5;
+  }
+
+  .section-title {
+    @apply text-base font-semibold tracking-tight text-slate-900;
+  }
+
+  .input-base {
+    @apply w-full rounded-lg border border-surface-200 bg-white px-3 py-2 text-sm text-slate-800 outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-100;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg border border-accent-500 bg-accent-500 px-3 py-2 text-sm font-semibold text-white transition hover:bg-accent-600 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-lg border border-surface-200 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-surface-100 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .error-text {
+    @apply text-sm text-error-500;
+  }
+}
