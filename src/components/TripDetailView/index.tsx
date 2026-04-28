@@ -1,0 +1,1 @@
+export { TripDetailView } from "./TripDetailView";
